@@ -1,0 +1,10 @@
+
+
+h1, h2, h3 {
+    font-family: "Comic Sans MS", sans-serif;
+    color: black;
+}
+
+p:first-letter {
+    font-size: 200%;
+}

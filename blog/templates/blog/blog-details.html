@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}| {{blog.title}} {% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'blog_list' %}">Blogs</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{blog.title}}</li>
+        </ol>
+      </nav>
+    <div class="container mt-3">
+        <img src="{{blog.cover_image.url }}" alt="" style="max-height: 480px;">
+        <h3>{{blog.title}}</h3>
+        <h5>{{ blog.category }}</h5>
+        <h6 class="text-muted">Created: {{ blog.date_created }} Last Edit:{{ blog.date_edited }}</h6>
+        <hr>
+        <p>
+            {{blog.content}}
+        </p>
+        <div class="fb-comments" data-href="http://localhost:8000/blogs-details/{{blog.slug}}" data-numposts="5" data-width=""></div>
+
+    </div>
+</div>
+{% endblock %}
